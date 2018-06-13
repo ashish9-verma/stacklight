@@ -1,3 +1,56 @@
-<p>
-  login works!
-</p>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+	<meta http-equiv="X-UA-Compatible" content="IE=11">
+	<title>JAWS Monitoring - Dashboard</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+	<!-- Icon Files -->
+	<!--<link href="/css/icon-style.css" type="text/css" rel="stylesheet">-->
+	<!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">-->
+	<!-- Custom Styles -->
+	<!--<link href="/css/styles.css" type="text/css" rel="stylesheet">-->
+	<!-- Scripts -->
+	<script src="/scripts/jquery-3.3.1.slim.min.js"></script>
+	<script src="/scripts/popper.min.js"></script>
+	<script src="/scripts/bootstrap.min.js"></script>
+
+	<!-- Custom script -->
+	<script type="text/javascript" src="/scripts/scripts.js"></script>
+</head>
+
+<body>
+	<section class="login-bg-wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-6 center-block">
+					<div class="login-main">
+						<img src="../../images/jaws-logo.png" alt="JAWS Logo" class="img" />
+						<div class="container">
+							<h1>JAWS</h1>
+							<h2>Monitoring</h2>
+							<div class="row">
+								<div class="col-sm-12 col-md-12 col-lg-12">
+									<div class="login-form">
+										<form action="" method="post">
+											<span class="login-error" >Invalid Credentials</span>
+											<input type="text" placeholder="User Name" name="emailid"  [(ngModel)]="email"/>
+											<input type="password" placeholder="Password" name="password"  [(ngModel)]="password" />
+											<button type="submit" title="Login to Stacklight" (click)="login()">Login</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

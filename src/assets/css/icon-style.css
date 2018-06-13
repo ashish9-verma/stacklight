@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'Tej-icofont';
-  src:  url('/fonts/Tej-icofont.eot?mfgpwa');
-  src:  url('/fonts/Tej-icofont.eot?mfgpwa#iefix') format('embedded-opentype'),
-    url('/fonts/Tej-icofont.ttf?mfgpwa') format('truetype'),
-    url('/fonts/Tej-icofont.woff?mfgpwa') format('woff'),
-    url('/fonts/Tej-icofont.svg?mfgpwa#Tej-icofont') format('svg');
+  src:  url('../fonts/Tej-icofont.eot?mfgpwa');
+  src:  url('../fonts/Tej-icofont.eot?mfgpwa#iefix') format('embedded-opentype'),
+    url('../fonts/Tej-icofont.ttf?mfgpwa') format('truetype'),
+    url('../fonts/Tej-icofont.woff?mfgpwa') format('woff'),
+    url('../fonts/Tej-icofont.svg?mfgpwa#Tej-icofont') format('svg');
   font-weight: normal;
   font-style: normal;
 }

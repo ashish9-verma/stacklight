@@ -20,6 +20,10 @@ const routes: Routes = [
 {
 	path : 'history',
 	component : HistoryComponent
+},
+{
+	path : 'login',
+	component : LoginComponent
 }
 ];
 
