@@ -8,8 +8,8 @@ import {Http, Response, RequestOptions, Headers,URLSearchParams} from '@angular/
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css',
               '../../css/icon-style.css',
-              '../../css/bootstrap.min.css',
-              '../../css/styles.css']
+              '../../assets/css/bootstrap.min.css',
+              '../../assets/css/styles.css']
 })
 export class LoginComponent implements OnInit {
   email : string ='';
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
             console.log('success',suc);
         },
         err => {
-            console.log("error",err._body.error );
+            console.log("error",err );
         }
     );
 

@@ -1,0 +1,635 @@
+@font-face {
+  font-family: 'Tej-icofont';
+  src:  url('../fonts/Tej-icofont.eot?mfgpwa');
+  src:  url('../fonts/Tej-icofont.eot?mfgpwa#iefix') format('embedded-opentype'),
+    url('../fonts/Tej-icofont.ttf?mfgpwa') format('truetype'),
+    url('../fonts/Tej-icofont.woff?mfgpwa') format('woff'),
+    url('../fonts/Tej-icofont.svg?mfgpwa#Tej-icofont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="Neue"], [class*=" Neue"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'Tej-icofont' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.NeueAdd_To_Boards:before {
+  content: "\41";
+}
+.NeueAudio:before {
+  content: "\42";
+}
+.NeueBack:before {
+  content: "\43";
+}
+.NeuePlay_mini:before {
+  content: "\44";
+}
+.NeueBoards_Default:before {
+  content: "\45";
+}
+.NeueClose:before {
+  content: "\46";
+}
+.NeueComments:before {
+  content: "\47";
+}
+.NeueDocuments:before {
+  content: "\48";
+}
+.NeueDownloads:before {
+  content: "\49";
+}
+.NeueDropdown_Active:before {
+  content: "\4a";
+}
+.NeueDropdown_Inactive:before {
+  content: "\4b";
+}
+.NeueEdit:before {
+  content: "\4c";
+}
+.NeueEnter_Folder:before {
+  content: "\4d";
+}
+.NeueFile_Cancel:before {
+  content: "\4e";
+}
+.NeueFile_Selected:before {
+  content: "\4f";
+}
+.NeueFile_Uploading:before {
+  content: "\50";
+}
+.NeueFiles_Info:before {
+  content: "\51";
+}
+.NeueFiles_Default:before {
+  content: "\52";
+}
+.NeueFolder_Large_Line:before {
+  content: "\53";
+}
+.NeueLikes:before {
+  content: "\54";
+}
+.NeueMore_Options:before {
+  content: "\55";
+}
+.NeueNo_Likes:before {
+  content: "\56";
+}
+.NeueProfile:before {
+  content: "\57";
+  color: #000;
+}
+.NeueNotifications_Default:before {
+  content: "\58";
+}
+.NeuePause:before {
+  content: "\59";
+}
+.NeuePhotos:before {
+  content: "\5a";
+}
+.NeuePlay:before {
+  content: "\5b";
+}
+.NeueRadio_Active:before {
+  content: "\5c";
+}
+.NeueRadio_Inactive:before {
+  content: "\5d";
+}
+.NeueRead_Only_Inactive:before {
+  content: "\5e";
+}
+.NeueRead_Only_Secondary:before {
+  content: "\5f";
+}
+.NeueRemove:before {
+  content: "\60";
+}
+.NeueRemove_From_Boards:before {
+  content: "\61";
+}
+.NeueSelect_All_Active:before {
+  content: "\62";
+}
+.NeueSelect_All_Inactive:before {
+  content: "\63";
+}
+.NeueShare:before {
+  content: "\64";
+}
+.NeueSmall_Dropdownactive:before {
+  content: "\65";
+}
+.NeueSmall_Files:before {
+  content: "\66";
+}
+.NeueVideo:before {
+  content: "\67";
+}
+.NeueUserProfile:before {
+  content: "\68";
+}
+.NeueSmall_Dropdown1_Inactive:before {
+  content: "\69";
+}
+.NeueCopy:before {
+  content: "\6a";
+}
+.NeueInviteUser:before {
+  content: "\6b";
+}
+.NeueAdd:before {
+  content: "\6c";
+}
+.NeueBestBuddy:before {
+  content: "\6d";
+}
+.NeueAllContacts:before {
+  content: "\6e";
+}
+.NeueCallLogs:before {
+  content: "\6f";
+}
+.NeueSMS:before {
+  content: "\70";
+}
+.NeueBackup:before {
+  content: "\71";
+}
+.NeueSettings:before {
+  content: "\72";
+}
+.NeueFileUnselected:before {
+  content: "\73";
+}
+.NeueNotOnDevice:before {
+  content: "\74";
+}
+.NeueRecent:before {
+  content: "\75";
+}
+.NeueSubtract:before {
+  content: "\76";
+}
+.NeueAdd2:before {
+  content: "\77";
+}
+.NeueiOS_Share:before {
+  content: "\78";
+}
+.NeueRestore:before {
+  content: "\79";
+}
+.NeueSearch:before {
+  content: "\7a";
+  color: #000;
+}
+.NeueFolderFilled:before {
+  content: "\7b";
+}
+.NeuePassword-Hide:before {
+  content: "\7c";
+}
+.NeuePassword-Show:before {
+  content: "\7d";
+}
+.NeueExpand:before {
+  content: "\7e";
+}
+.NeueCollapse:before {
+  content: "\a1";
+}
+.NeueFacebook:before {
+  content: "\a2";
+}
+.NeueGoogle:before {
+  content: "\a3";
+}
+.NeueArc:before {
+  content: "\a4";
+}
+.NeueEmail:before {
+  content: "\a5";
+}
+.NeueCheck:before {
+  content: "\a6";
+}
+.NeueiOS-overflow:before {
+  content: "\a7";
+}
+.NeuePDF:before {
+  content: "\a8";
+}
+.NeuePPT:before {
+  content: "\a9";
+}
+.NeueDOC:before {
+  content: "\aa";
+}
+.NeueXLS:before {
+  content: "\ab";
+}
+.NeueExit-Folder:before {
+  content: "\ac";
+}
+.NeuePlaylist:before {
+  content: "\ae";
+  color: rgba(0, 0, 0, 0.800000011920929);
+}
+.NeueArchive:before {
+  content: "\af";
+}
+.Neueinvitecontributors:before {
+  content: "\b0";
+}
+.NeueListView:before {
+  content: "\b1";
+  color: #000;
+}
+.NeueGridView:before {
+  content: "\b2";
+  color: #000;
+}
+.NeueExport:before {
+  content: "\b3";
+  color: #000;
+}
+.NeueMove:before {
+  content: "\b4";
+}
+.NeueOpen-with:before {
+  content: "\b5";
+  color: #000;
+}
+.NeueOffline:before {
+  content: "\b6";
+}
+.NeueShared:before {
+  content: "\b7";
+}
+.NeueBoardCount:before {
+  content: "\b8";
+}
+.NeueNotOffline:before {
+  content: "\b9";
+}
+.NeueOfflineAngled:before {
+  content: "\bb";
+}
+.NeueHistory:before {
+  content: "\bf";
+}
+.NeueComments-Flat:before {
+  content: "\c0";
+}
+.NeueDine:before {
+  content: "\c1";
+}
+.NeueMusic:before {
+  content: "\c2";
+}
+.NeueTravel:before {
+  content: "\c3";
+}
+.NeueError:before {
+  content: "\c4";
+}
+.NeueSend:before {
+  content: "\c5";
+}
+.NeueInviteToTej:before {
+  content: "\c6";
+}
+.NeuePhone:before {
+  content: "\c7";
+}
+.NeueUpDown:before {
+  content: "\c8";
+}
+.NeueDragHandle:before {
+  content: "\c9";
+}
+.NeueSkipPrevious:before {
+  content: "\ca";
+}
+.NeueSkipNext:before {
+  content: "\cb";
+}
+.NeueFullScreen:before {
+  content: "\cc";
+}
+.NeueExitFullScreen:before {
+  content: "\cd";
+}
+.NeueCheckFilled:before {
+  content: "\ce";
+  color: #010101;
+}
+.NeueIntermittentSelect:before {
+  content: "\cf";
+  color: #010101;
+}
+.NeueHelp:before {
+  content: "\d0";
+}
+.NeueCamera:before {
+  content: "\d1";
+}
+.NeueSync:before {
+  content: "\d2";
+}
+.NeueNoPreview:before {
+  content: "\d3";
+}
+.NeueBoardsFocused:before {
+  content: "\d4";
+}
+.NeueNotificationFocused:before {
+  content: "\d5";
+}
+.NeueBoardFolder:before {
+  content: "\d6";
+}
+.NeueDownChevronEllipse:before {
+  content: "\d7";
+}
+.NeuePauseEllipse:before {
+  content: "\d8";
+}
+.NeueSendFilled:before {
+  content: "\d9";
+}
+.NeueWeb:before {
+  content: "\d10";
+}
+.NeueMessages:before {
+  content: "\e1";
+}
+.NeueAddFolder:before {
+  content: "\e2";
+}
+.NeueJio:before {
+  content: "\e3";
+}
+.NeueFingerprint:before {
+  content: "\e4";
+}
+.NeueDocuments2:before {
+  content: "\e5";
+}
+.NeuePDFFilled:before {
+  content: "\e6";
+}
+.NeueCameraFilled:before {
+  content: "\e7";
+}
+.NeueCloud:before {
+  content: "\e8";
+}
+.NeueSharedBy:before {
+  content: "\e9";
+}
+.NeueStarFilled:before {
+  content: "\e10";
+}
+.NeueLogOut:before {
+  content: "\f1";
+}
+.NeueUserFilled:before {
+  content: "\f2";
+}
+.NeueOtherFiles:before {
+  content: "\f3";
+}
+.NeueMerge:before {
+  content: "\f4";
+}
+.NeueDocFilled:before {
+  content: "\f5";
+}
+.NeueTXTFilled:before {
+  content: "\f6";
+}
+.NeuePPTFilled:before {
+  content: "\f7";
+}
+.NeueXLSFilled:before {
+  content: "\f8";
+}
+.NeueBoardFolderFilled:before {
+  content: "\f9";
+  color: #000;
+}
+.NeueEmojiSad:before {
+  content: "\118";
+}
+.NeueLocation:before {
+  content: "\220";
+}
+.NeueCommentsFilled:before {
+  content: "\221";
+}
+.NeueTransferDSK:before {
+  content: "\222";
+}
+.NeueSettingsFilled:before {
+  content: "\223";
+}
+.NeueNoNotification:before {
+  content: "\224";
+}
+.NeueUpChevronEllipse2:before {
+  content: "\225";
+}
+.NeueSort:before {
+  content: "\ff";
+}
+.NeueDuplicates:before {
+  content: "\226";
+}
+.NeueMessageFilled:before {
+  content: "\227";
+}
+.NeueCloudFilled:before {
+  content: "\228";
+}
+.NeueDeviceFilled:before {
+  content: "\229";
+}
+.NeueAlert:before {
+  content: "\230";
+}
+.NeueIdea:before {
+  content: "\231";
+}
+.NeueLeaveBoard:before {
+  content: "\232";
+}
+.NeueOthers:before {
+  content: "\233";
+  color: #5e5f5f;
+}
+.NeueImageFilled:before {
+  content: "\234";
+  color: #4e4d4e;
+}
+.NeuePlayFilled:before {
+  content: "\235";
+  color: #4e4d4e;
+}
+.NeueScrubberFilled:before {
+  content: "\236";
+  color: #4e4d4e;
+}
+.NeueLink:before {
+  content: "\237";
+  color: #4e4d4e;
+}
+.NeueDiscardAll:before {
+  content: "\238";
+}
+.NeueOfflineTilted:before {
+  content: "\239";
+}
+.NeueBackupFilled:before {
+  content: "\240";
+}
+.NeueCloudSync:before {
+  content: "\241";
+}
+.NeueThumbsUp:before {
+  content: "\242";
+}
+.NeueCloudSyncLine:before {
+  content: "\243";
+}
+.NeueUpTraffic:before {
+  content: "\244";
+}
+.NeueDownTraffic:before {
+  content: "\245";
+}
+.NeueMinimize:before {
+  content: "\246";
+}
+.NeueCloudLine:before {
+  content: "\247";
+}
+.NeueOther:before {
+  content: "\248";
+}
+.NeueTXT:before {
+  content: "\249";
+}
+.NeuePlayFilledEllipse:before {
+  content: "\250";
+}
+.NeuePauseFilledEllipse:before {
+  content: "\251";
+}
+.NeueDFilledError:before {
+  content: "\252";
+}
+.NeueFileFilledSelected:before {
+  content: "\253";
+}
+.NeueBatteryLow:before {
+  content: "\254";
+}
+.NeueVideoCamera:before {
+  content: "\255";
+}
+.Neuenightime:before {
+  content: "\256";
+}
+.NeueDocScanner:before {
+  content: "\257";
+}
+.NeueExclaim:before {
+  content: "\258";
+}
+.NeueDate-taken:before {
+  content: "\259";
+}
+.NeueDate-modified:before {
+  content: "\260";
+}
+.NeueA-Z:before {
+  content: "\261";
+}
+.NeueMyJio:before {
+  content: "\262";
+}
+.NeueAddFolderFilled:before {
+  content: "\263";
+}
+.NeueDocScanner-line:before {
+  content: "\264";
+}
+.Neuedownload:before {
+  content: "\265";
+}
+.Neuecropon:before {
+  content: "\266";
+}
+.Neuecropoff:before {
+  content: "\267";
+}
+.Neueflashon:before {
+  content: "\268";
+}
+.Neueflashoff:before {
+  content: "\269";
+}
+.Neueautoenhance:before {
+  content: "\270";
+}
+.Neuefiletype:before {
+  content: "\271";
+}
+.Neuefilters:before {
+  content: "\272";
+}
+.Neuerotate:before {
+  content: "\273";
+}
+.Neueprevious:before {
+  content: "\274";
+}
+.Neuenext:before {
+  content: "\275";
+}
+.Neueclosefilled:before {
+  content: "\276";
+}
+.Neueaddcontactfilled:before {
+  content: "\277";
+}
+.Neueaddfilefilled:before {
+  content: "\278";
+}
+.Neueaddtoboardfilled:before {
+  content: "\279";
+}
+.Neueyoutoube:before {
+  content: "\280";
+}
+.Neuetwitter:before {
+  content: "\281";
+}

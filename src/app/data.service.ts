@@ -20,16 +20,9 @@ export class DataService {
   doPOST(url,params,headers){
     console.log(url)
     console.log(params)
-    const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
-    var headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    headers.append('Access-Control-Allow-Origin', '*');
 
-    let options = new RequestOptions( {headers: headers });
-
-    console.log(httpOptions)
-    return this.http.post(url,params,options).pipe(
-        map(res => res.data) // or any other operator
+    return this.http.post(url,params,{headers: headers }).pipe(
+        map(res => res.json()) // or any other operator
       );
   }
 

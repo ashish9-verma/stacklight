@@ -1,0 +1,30 @@
+*{ margin: 0; padding: 0; }
+body { background: #fff; font-family: 'Roboto', sans-serif; font-size: 100%; }
+
+section.login-bg-wrapper { background: url("../images/bg.png") left bottom no-repeat; background-size: 100% 100%; text-align: center;}
+section.login-bg-wrapper .login-main { width: 100%; background: #fff; margin: 10% auto 0 auto; padding: 8% 3% 10% 3%; border: #ccc solid 1px; border-radius: 10px; box-shadow: 0 0 17px 1px rgb(222,215,215); transition: all .3s ease }
+section.login-bg-wrapper .login-main:hover { box-shadow: none; transition: all .3s ease; }
+
+.login-main h1 {
+	color: #4188b5;
+    font-size: 35px;
+    font-weight: 600;
+    letter-spacing: .5px;
+	margin: 15px 0 0 0;
+}
+.login-main h2 { color: #959595; font-size: 23px; font-weight: 300; margin: 0; }
+.login-form { max-width: 100%; margin-top: 20%; }
+.login-form input[type="text"], .login-form input[type="password"] { width: 100%; margin-bottom: 5%; border: #ccc solid 1px; padding: 4%; color: #a1a1a1; font-size: 20px; }
+.login-form input::placeholder { color: #c8c8c8; font-size: 20px; font-weight: 100; }
+
+.login-form button { background: #2493c4; margin: 5% 0 3% 0; padding: 1.7% 15%; text-transform: uppercase; cursor: pointer; color: #fff; border: 0; font-size: 21px; font-weight: 300; border-radius: 30px; transition: .3s ease all; }
+.login-form button:hover { opacity: .8; transition: .3s ease all; }
+.center-block { margin: 0 auto; }
+
+/* Login Error Message */
+.login-error { text-align: left !important; float: left; color: #f00; text-transform: uppercase; margin-bottom: 5px; }
+@media (min-width: 768px) and (max-width: 1099px) {
+    .container { max-width: 100% !important; }
+    .container .col-md-6 { max-width: 520px; }
+    .login-form input::placeholder { font-size: 17px; }
+}
