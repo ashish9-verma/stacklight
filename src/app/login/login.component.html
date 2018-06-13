@@ -37,7 +37,7 @@
 								<div class="col-sm-12 col-md-12 col-lg-12">
 									<div class="login-form">
 										<form action="" method="post">
-											<span class="login-error" >Invalid Credentials</span>
+											<span class="login-error" *ngIf ="isError" >Invalid Credentials</span>
 											<input type="text" placeholder="User Name" name="emailid"  [(ngModel)]="email"/>
 											<input type="password" placeholder="Password" name="password"  [(ngModel)]="password" />
 											<button type="submit" title="Login to Stacklight" (click)="login()">Login</button>

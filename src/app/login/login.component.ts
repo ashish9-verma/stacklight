@@ -13,14 +13,15 @@ import {Http, Response, RequestOptions, Headers,URLSearchParams} from '@angular/
 })
 export class LoginComponent implements OnInit {
   email : string ='';
-  password : string =''
+  password : string ='';
+  isError :boolean = false;
   constructor(private router : Router,private dataService: DataService) {}
   ngOnInit() {
 
   }
 
   login(){
-    var url = 'http://10.157.250.248:8080/sle/account/login';
+    var url = 'http://10.157.250.248:8080/sle/account/login/jpe3';
     var headers ={'Content-Type':'application/json'}
     var params ={"emailId":this.email,"password":this.password};
 
