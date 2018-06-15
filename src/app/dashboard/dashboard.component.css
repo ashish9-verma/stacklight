@@ -1,0 +1,295 @@
+*{ margin: 0; padding: 0; }
+body { background: #fff; font-family: 'Roboto', sans-serif; font-size: 100%;  }
+
+section.login-bg-wrapper { background: url("/images/bg.png") left bottom no-repeat; background-size: 100% 100%; text-align: center;}
+section.login-bg-wrapper .login-main { width: 100%; background: #fff; margin: 10% auto 0 auto; padding: 8% 3% 10% 3%; border: #ccc solid 1px; border-radius: 10px; box-shadow: 0 0 17px 1px rgb(222,215,215); transition: all .3s ease }
+section.login-bg-wrapper .login-main:hover { box-shadow: none; transition: all .3s ease; }
+
+.login-main h1 {
+	color: #4188b5;
+    font-size: 35px;
+    font-weight: 600;
+    letter-spacing: .5px;
+	margin: 15px 0 0 0;
+}
+.login-main h2 { color: #959595; font-size: 23px; font-weight: 300; margin: 0; }
+.login-form { max-width: 100%; margin-top: 20%; }
+.login-form input[type="text"], .login-form input[type="password"] { width: 100%; margin-bottom: 5%; border: #ccc solid 1px; padding: 4%; color: #a1a1a1; font-size: 20px; }
+.login-form input::placeholder { color: #c8c8c8; font-size: 20px; font-weight: 100; }
+
+.login-form button { background: #2493c4; margin: 5% 0 3% 0; padding: 1.7% 15%; text-transform: uppercase; cursor: pointer; color: #fff; border: 0; font-size: 21px; font-weight: 300; border-radius: 30px; transition: .3s ease all; }
+.login-form button:hover { opacity: .8; transition: .3s ease all; }
+.center-block { margin: 0 auto; }
+
+/* Login Error Message */
+.login-error { text-align: left !important; float: left; color: #f00; text-transform: uppercase; margin-bottom: 5px; }
+
+@media (min-width: 768px) and (max-width: 1099px) {
+    .container { max-width: 100% !important; }
+    .container .col-md-6 { max-width: 520px; }
+    .login-form input::placeholder { font-size: 17px; }
+}
+
+/*** Global styles ***/
+.mar-rgt { margin-right: 10px !important; }
+.no-bg { background: none !important; }
+
+
+/******************* DASHBOARD Styles ******************/
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@-ms-keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@-o-keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@-moz-keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+.main-wrapper {
+	width: 100%;
+	float: left;
+	color: #666;
+	background: #666;
+}
+
+/* Site Header Styles */
+header { width: 100%; float: left; background: #fff; position: relative; transition: .3s all ease; -webkit-animation: .5s ease-out 0s 1 slideInFromTop; -o-animation: .5s ease-out 0s 1 slideInFromTop; -ms-animation: .5s ease-out 0s 1 slideInFromTop; -moz-animation: .5s ease-out 0s 1 slideInFromTop; transition: .3s all ease;  box-shadow: #333 -2px 6px 10px -3px; }
+
+header:hover { transition: .3s all ease; box-shadow: none; }
+
+header nav {
+	width: 75%;
+	margin: 0 auto;
+}
+header nav ul li { color: #999; cursor: pointer; margin: 0 20px 0 0; float: left; padding: 0; text-align: center; display: inline; list-style-type: none; transition: all ease .2s; }
+
+header nav ul li.dashboard, header nav ul li.alerts, header nav ul li.history { width: 100px; display: block; transition: all ease .3s; }
+header nav ul li span { display: block; font-size: 25px; padding-left: 3px; padding-bottom: 5px; } /* Header Navigation Icon Size */
+header nav ul li.active { border-bottom: #999 6px solid; /*pointer-events: none;*/ margin-right: 25px }
+
+header nav ul li.dashboard:hover, header nav ul li.alerts:hover, header nav ul li.history:hover { border-bottom: #999 solid 6px; transition: all ease .1s; }
+
+header nav ul li.dashboard:hover span.NeueBoardsFocused { transform: rotate(360deg); transition: all ease .4s; }
+header nav ul li.alerts:hover span.NeueNotificationFocused { transform: rotate(-30deg); transition: all ease .4s; }
+header nav ul li.history:hover span.NeueHistory { transform: rotate(-360deg); transition: all ease .4s; }
+
+/*** Dashboard Main Styles ************
+****************************************/
+section.dashboard-wrapper {
+	width: 100%;
+	float: left;
+	padding: 15px;
+	/*height: 500px;*/
+	background: #666;
+}
+section.dashboard-wrapper .status-indicator { width: auto; float: right; padding: 10px 0; background: #fff; border-radius: 30px; }
+section.dashboard-wrapper .status-indicator ul { margin: 0; padding: 0; }
+section.dashboard-wrapper .status-indicator li { font-size: 15px; list-style-type: none; margin: 0 10px; vertical-align: text-top; display: inline; }
+section.dashboard-wrapper .status-indicator li span.critical { /* Critical Red Dot */
+	width: 25px;
+    height: 25px;
+    display: inline-block;
+    border-radius: 50px;
+    margin: 0 5px 0 0;
+    vertical-align: top;
+    background: #f00;
+	cursor: auto;
+}
+section.dashboard-wrapper .status-indicator li span.warning { /* Warning Orange Dot */
+	width: 25px;
+    height: 25px;
+    display: inline-block;
+    margin: 0 5px 0 0;
+    vertical-align: top;
+    background: #ff931e;
+	cursor: auto;
+}
+
+section.dashboard-wrapper .dashboard-main {
+	width: 100%;
+	float: left;
+	/*border: red solid 1px;*/
+}
+
+/* Dashboard disection of Three Rows */
+section.dashboard-wrapper .dashboard-main .top-row,
+section.dashboard-wrapper .dashboard-main .middle-row,
+section.dashboard-wrapper .dashboard-main .bottom-row {
+	width: 100%;
+	float: left;
+	/*border: green solid 1px;*/
+}
+
+section.dashboard-wrapper .dashboard-main .top-row { padding-left: 20px; }
+
+/*  Dashboard COMPONENT Styles */
+section.dashboard-wrapper .dashboard-main .component { /* Global Component */
+	width: 207px;
+	height: 105px;
+	float: left;
+	/*padding: 15px 10px 10px 10px;*/
+	background: #fff; /* Component BG Color */
+	box-shadow: #333 -2px 3px 5px 0;
+	transition: .3s ease all;
+}
+section.dashboard-wrapper .dashboard-main .component:hover {
+	box-shadow: none;
+	transition: .4s ease all;
+}
+
+section.dashboard-wrapper .dashboard-main .component h3 {
+	float: left;
+	font-size: 17px;
+	text-transform: uppercase;
+}
+
+section.dashboard-wrapper .dashboard-main .component .NeueNotificationFocused /*.NeueNotifications_Default*/  { /* Eanbled Bell Icon */
+	color: #b3b3b3;
+	float: right;
+	font-size: 27px;
+	text-decoration: none;
+}
+
+section.dashboard-wrapper .dashboard-main .component .NeueNoNotification { /* Disabled Bell Icon */
+	color: #b3b3b3;
+	float: right;
+	font-size: 27px;
+	transition: all ease .4s;
+	text-decoration: none;
+}
+
+/* Bell rollovers */
+.NeueNoNotification:hover:before { transition: all ease .9s; content: "\d5"; }
+.NeueNotificationFocused:hover:before { transition: all ease .5s; content: "\224"; }
+
+section.dashboard-wrapper .top-row .hori-lines-bg { width: 800px; height: 139px; float: left; margin-left: 13px; box-sizing: border-box; background: url('/images/top-lines.png') 0 0 no-repeat; /*background-size: 100% 100%;*/ }
+
+/* Column One - Openstacks Section Styles **********/
+section.dashboard-wrapper .middle-row .openstack-main { width: 687px; position: relative; background: url('/images/vertical-line.png') 84.8% 0 no-repeat; padding: 0px 0 15px 0px; border: solid 3px #e6e6e6; border-radius: 10px; float: left; }
+
+section.dashboard-wrapper .middle-row .openstack-row { float: right; /*background: green;*/ padding: 0; margin-top: 25px; display: inline-block; } /* Openstack Row */
+
+section.dashboard-wrapper .middle-row .openstack-main h4 { width: 200px; position: absolute; top: -10px; left: 30px; margin: 0; padding: 0 0 0 15px; background: #666; font-size: 15px; color: #fff; font-weight: 400; letter-spacing: .5px; }
+
+section.dashboard-wrapper .middle-row .component { margin-right: 15px; } /* Covers external components in middle row */
+
+section.dashboard-wrapper .middle-row .openstack-main .component p { color: #fff; font-size: 13px; margin: 5px 10px; }
+
+section.dashboard-wrapper .middle-row .openstack-main .component .info-main { width: 100%; height: 73px; float: left; background: #fff; border-radius: 4px; padding: 10px; }
+
+section.dashboard-wrapper .middle-row .openstack-main .ackngmnt-main,
+section.dashboard-wrapper .middle-row .openstack-main .alerts-silence  { width: 100%; float: left; }
+
+section.dashboard-wrapper .middle-row .openstack-main .alerts-silence h5 { margin: 15px 0 0 0; font-size: 13px; color: #666; }
+
+/* Component Status Backgrounds */
+.critical { background: #f00 !important; cursor: pointer; }
+.warning { background: #ff931e !important; cursor: pointer; }
+
+section.dashboard-wrapper .dashboard-main .critical {
+	-webkit-animation: critical-component 1.3s infinite;
+	-o-animation: critical-component 1.3s infinite;
+	-ms-animation: critical-component 1.3s infinite;
+	-moz-animation: critical-component 1.3s infinite;
+	animation: critical-component 1.3s infinite;
+}
+
+@-webkit-keyframes critical-component {
+  0%, 49% {
+    background: #f00;
+  }
+  50%, 100% {
+    background: #666;
+  }
+}
+
+/*section.dashboard-wrapper .dashboard-main .warning {
+	-webkit-animation: warning-component 1.8s infinite;
+	-o-animation: warning-component 1.8s infinite;
+	-ms-animation: warning-component 1.3s infinite;
+	-moz-animation: warning-component 1.3s infinite;
+	animation: warning-component 1.8s infinite;
+}
+
+@-webkit-keyframes warning-component {
+  0%, 49% {
+    background: #ff931e;
+  }
+  50%, 100% {
+    background: #666;
+  }
+}
+*/
+
+.pad-all-10 { padding: 10px; }
+
+/* Column Two - Horizon/Ceph Section Styles ***********/
+section.dashboard-wrapper .middle-row .col2-horizon-ceph { width: auto; height: 310px; float: left; background: url('/images/horizon-ceph-lines.png') 1px 0 no-repeat; padding: 28px 0 0 15px; }
+
+/* System Section Styles *******/
+section.dashboard-wrapper .dashboard-main .bottom-row .system-main { width: 690px; margin-top: -32px; float: left; background: url('/images/bottom-left-line-arrows.png') 75.1% 0 no-repeat; }
+
+section.dashboard-wrapper .dashboard-main .bottom-row .system-left { width: 460px; float: left; position: relative; padding-bottom: 15px; margin: 40px 0 0 0; border: solid 3px #e6e6e6; border-radius: 10px; }
+
+/* System Heading Legend */
+section.dashboard-wrapper .dashboard-main .bottom-row .system-left h4 {
+    width: 83px;
+    position: absolute;
+    top: -10px;
+    left: 30px;
+    margin: 0;
+    padding: 0 0 0 15px;
+    background: #666;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: .5px;
+}
+
+section.dashboard-wrapper .dashboard-main .bottom-row .system-left .component { margin: 15px 0 0 13px; } /* System component Spacing Adjustment */
+
+section.dashboard-wrapper .dashboard-main .bottom-row .system-main .col2 { width: auto; float: left; margin: 57px 0 0 10px; } /* Contrail Column */
+
+ /* Bottom Third Column with Border *******/
+section.dashboard-wrapper .dashboard-main .bottom-row .col3 { /*background: red;*/ width: 237px; min-height: 270px; float: left; border: #e6e6e6 3px solid; border-radius: 10px; padding: 20px 15px 0 12px ; margin: 0; }
+
+section.dashboard-wrapper .dashboard-main .bottom-row .col3 .component { margin-bottom: 15px; }
+
+section.dashboard-wrapper .dashboard-main .bottom-row .col4 { width: auto; float: left; margin: 0 0 0 10px; } /* Bottom Third Column with Border */

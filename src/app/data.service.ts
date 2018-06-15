@@ -13,8 +13,11 @@ export class DataService {
 
   constructor(private http: Http) { }
 
-  doGET(url,params,headers){
-      this.http.get(url, params).subscribe(res => console.log(res.json()));
+  doGET(url){
+
+      return this.http.get(url).pipe(
+        map(res => res.json()) // or any other operator
+      );
   }
 
   doPOST(url,params,headers){
