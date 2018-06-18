@@ -1,7 +1,7 @@
 *{ margin: 0; padding: 0; }
 body { background: #fff; font-family: 'Roboto', sans-serif; font-size: 100%;  }
 
-section.login-bg-wrapper { background: url("../images/bg.png") left bottom no-repeat; background-size: 100% 100%; text-align: center;}
+section.login-bg-wrapper { background: url("../../images/bg.png") left bottom no-repeat; background-size: 100% 100%; text-align: center;}
 section.login-bg-wrapper .login-main { width: 100%; background: #fff; margin: 10% auto 0 auto; padding: 8% 3% 10% 3%; border: #ccc solid 1px; border-radius: 10px; box-shadow: 0 0 17px 1px rgb(222,215,215); transition: all .3s ease }
 section.login-bg-wrapper .login-main:hover { box-shadow: none; transition: all .3s ease; }
 
@@ -194,15 +194,15 @@ section.dashboard-wrapper .dashboard-main .component .NeueNoNotification { /* Di
 	transition: all ease .4s;
 	text-decoration: none;
 }
-
+.jaws-logo {background: url('../../images/jaws-logo.png')}
 /* Bell rollovers */
 .NeueNoNotification:hover:before { transition: all ease .9s; content: "\d5"; }
 .NeueNotificationFocused:hover:before { transition: all ease .5s; content: "\224"; }
 
-section.dashboard-wrapper .top-row .hori-lines-bg { width: 800px; height: 139px; float: left; margin-left: 13px; box-sizing: border-box; background: url('../images/top-lines.png') 0 0 no-repeat; /*background-size: 100% 100%;*/ }
+section.dashboard-wrapper .top-row .hori-lines-bg { width: 800px; height: 139px; float: left; margin-left: 13px; box-sizing: border-box; background: url('../../images/top-lines.png') 0 0 no-repeat; /*background-size: 100% 100%;*/ }
 
 /* Column One - Openstacks Section Styles **********/
-section.dashboard-wrapper .middle-row .openstack-main { width: 687px; position: relative; background: url('../images/vertical-line.png') 84.8% 0 no-repeat; padding: 0px 0 15px 0px; border: solid 3px #e6e6e6; border-radius: 10px; float: left; }
+section.dashboard-wrapper .middle-row .openstack-main { width: 687px; position: relative; background: url('../../images/vertical-line.png') 84.8% 0 no-repeat; padding: 0px 0 15px 0px; border: solid 3px #e6e6e6; border-radius: 10px; float: left; }
 
 section.dashboard-wrapper .middle-row .openstack-row { float: right; /*background: green;*/ padding: 0; margin-top: 25px; display: inline-block; } /* Openstack Row */
 
@@ -261,10 +261,10 @@ section.dashboard-wrapper .dashboard-main .critical {
 .pad-all-10 { padding: 10px; }
 
 /* Column Two - Horizon/Ceph Section Styles ***********/
-section.dashboard-wrapper .middle-row .col2-horizon-ceph { width: auto; height: 310px; float: left; background: url('../images/horizon-ceph-lines.png') 1px 0 no-repeat; padding: 28px 0 0 15px; }
+section.dashboard-wrapper .middle-row .col2-horizon-ceph { width: auto; height: 310px; float: left; background: url('../../images/horizon-ceph-lines.png') 1px 0 no-repeat; padding: 28px 0 0 15px; }
 
 /* System Section Styles *******/
-section.dashboard-wrapper .dashboard-main .bottom-row .system-main { width: 690px; margin-top: -32px; float: left; background: url('../images/bottom-left-line-arrows.png') 75.1% 0 no-repeat; }
+section.dashboard-wrapper .dashboard-main .bottom-row .system-main { width: 690px; margin-top: -32px; float: left; background: url('../../images/bottom-left-line-arrows.png') 75.1% 0 no-repeat; }
 
 section.dashboard-wrapper .dashboard-main .bottom-row .system-left { width: 460px; float: left; position: relative; padding-bottom: 15px; margin: 40px 0 0 0; border: solid 3px #e6e6e6; border-radius: 10px; }
 

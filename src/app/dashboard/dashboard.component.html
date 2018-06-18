@@ -10,13 +10,6 @@
 	<title>JAWS Monitoring - Dashboard</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-	<!-- Icon Files -->
-
-	<!-- Scripts -->
-	<script src="scripts/jquery-3.3.1.slim.min.js"></script>
-	<script src="scripts/popper.min.js"></script>
-	<script src="scripts/bootstrap.min.js"></script>
-	<script type="text/javascript" src="scripts/scripts.js"></script>
 </head>
 
 <body>
@@ -41,43 +34,44 @@
 			<!-- Dashboard Content Starts -->
 			<div class="dashboard-main">
 				<!-- Top Row Starts -->
-				<div class="top-row" >
+				<div class="top-row">
+					
 					<div class="component rounded pad-all-10">
 						<div class="info-main">
 							<h3>Heat</h3>
 							<!-- Bell Icon -->
-							<div (click)="open($event)" class="NeueNotificationFocused"></div>
-							<div class="alerts-silence" *ngFor="let obj of obj_top_row;" [ngClass]="{'critical': obj.value.alertType=='R' && obj.key == '1','warning': obj.value.alertType=='Y' && obj.key == '1'}">
-										<h5><span>{{obj.value.silenceAlerts}}</span> Alerts Silenced</h5>
-              </div>
+							<a href="javascript:void(0)" class="NeueNotificationFocused"></a>
+							<div class="alerts-silence">
+                           <h5>02 Alerts Silenced</h5>
+                           </div>
 						</div>
-						<div class="ackngmnt-main" *ngFor="let obj of obj_top_row;" [ngClass]="{'critical': obj.value.alertType=='R' && obj.key == '1','warning': obj.value.alertType=='Y' && obj.key == '1'}">
-									<p><span>{{obj.value.ackAlerts}}/{{obj.value.totalAlerts}}</span> Alerts Acknowledged</p>
-            </div>
+						<div class="ackngmnt-main">
+                        <p>12/18 Alerts Acknowledged</p>
+                        </div>
 					</div>
 					<div class="hori-lines-bg"></div>
 				</div>
 				<!-- Top Row Ends -->
 				<!-- Middle Row Starts -->
-				<div class="middle-row" *ngFor="let obj of obj_middle_row;let i = index">
+				<div class="middle-row">
 					<!-- Openstack Section starts -->
 					<div class="openstack-main">
 						<!-- Legend Title -->
 						<h4>OpenStack Components</h4>
 
 						<div class="openstack-row">
-							<div class="component">
+							<div class="component rounded">
 								<div class="info-main">
 									<h3>Nova</h3>
 									<!-- Bell Icon -->
 									<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
 									<div class="alerts-silence">
-										<h5><span>02</span> Alerts Silenced</h5>
-									</div>
+                              <h5>02 Alerts Silenced</h5>
+                           </div> 
 								</div>
-                <div class="ackngmnt-main">
-									<p><span>12/18</span> Alerts Acknowledged</p>
-								</div>
+								<div class="ackngmnt-main">
+                           <p>12/18 Alerts Acknowledged</p>
+                        </div>
 							</div>
 
 							<div class="component rounded critical">
@@ -115,12 +109,6 @@
 									<h3>Keystone</h3>
 									<!-- Bell Icon -->
 									<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
-                  <div class="alerts-silence">
-										<h5><span>02</span> Alerts Silenced</h5>
-									</div>
-								</div>
-                <div class="ackngmnt-main">
-									<p><span>12/18</span> Alerts Acknowledged</p>
 								</div>
 							</div>
 							<div class="component rounded float-left">
@@ -128,12 +116,6 @@
 									<h3>Glance</h3>
 									<!-- Bell Icon -->
 									<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
-                  <div class="alerts-silence">
-										<h5><span>02</span> Alerts Silenced</h5>
-									</div>
-								</div>
-                <div class="ackngmnt-main">
-									<p><span>{{obj.value.ackAlerts}}/{{obj.value.totalAlerts}}</span> Alerts Acknowledged</p>
 								</div>
 							</div>
 						</div>
@@ -144,18 +126,12 @@
 
 					<!-- Column Two - Horizon Ceph Section starts -->
 					<div class="col2-horizon-ceph">
-						<div class="component rounded float-left">
+						<div class="component rounded float-left pad-all-10">
 							<div class="info-main">
 								<h3>Horizon</h3>
 								<!-- Bell Icon -->
 								<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
-                <div class="alerts-silence">
-										<h5><span>02</span> Alerts Silenced</h5>
-									</div>
 							</div>
-              <div class="ackngmnt-main">
-									<p><span>12/18</span> Alerts Acknowledged</p>
-								</div>
 						</div>
 
 						<div class="component rounded float-left pad-all-10">
@@ -163,13 +139,7 @@
 								<h3>Ceph</h3>
 								<!-- Bell Icon -->
 								<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
-                <div class="alerts-silence">
-										<h5><span>{{obj.value.silenceAlerts}}</span> Alerts Silenced</h5>
-									</div>
 							</div>
-              <div class="ackngmnt-main" [ngClass]="{'critical': obj.value.alertType=='R','warning': obj.value.alertType=='Y'}" *ngIf="obj.key == '6'">
-									<p><span>{{obj.value.ackAlerts}}/{{obj.value.totalAlerts}}</span> Alerts Acknowledged</p>
-								</div>
 						</div>
 					</div>
 					<!-- Column Two - Horizon Ceph Section ends -->
@@ -188,12 +158,6 @@
 									<h3>System</h3>
 									<!-- Bell Icon -->
 									<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
-                  <div class="alerts-silence">
-										<h5><span>02</span> Alerts Silenced</h5>
-									</div>
-								</div>
-                <div class="ackngmnt-main">
-									<p><span>12/18</span> Alerts Acknowledged</p>
 								</div>
 							</div>
 							<div class="component rounded float-left pad-all-10">
@@ -201,12 +165,6 @@
 									<h3>My SQL</h3>
 									<!-- Bell Icon -->
 									<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
-                  <div class="alerts-silence">
-										<h5><span>02</span> Alerts Silenced</h5>
-									</div>
-								</div>
-                <div class="ackngmnt-main">
-									<p><span>12/18</span> Alerts Acknowledged</p>
 								</div>
 							</div>
 							<div class="component rounded float-left pad-all-10">
@@ -214,12 +172,6 @@
 									<h3>Rabbit MQ</h3>
 									<!-- Bell Icon -->
 									<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
-                  <div class="alerts-silence">
-										<h5><span>02</span> Alerts Silenced</h5>
-									</div>
-								</div>
-                <div class="ackngmnt-main">
-									<p><span>12/18</span> Alerts Acknowledged</p>
 								</div>
 							</div>
 						</div>
@@ -232,12 +184,6 @@
 									<h3>Contrail</h3>
 									<!-- Bell Icon -->
 									<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
-                  <div class="alerts-silence">
-										<h5><span>02</span> Alerts Silenced</h5>
-									</div>
-								</div>
-                <div class="ackngmnt-main">
-									<p><span>12/18</span> Alerts Acknowledged</p>
 								</div>
 							</div>
 						</div>
@@ -252,13 +198,7 @@
 								<h3>Ha Proxy</h3>
 								<!-- Bell Icon -->
 								<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
-                <div class="alerts-silence">
-										<h5><span>02</span> Alerts Silenced</h5>
-									</div>
 							</div>
-              <div class="ackngmnt-main">
-									<p><span>12/18</span> Alerts Acknowledged</p>
-								</div>
 						</div>
 
 						<div class="component rounded float-left pad-all-10">
@@ -266,13 +206,7 @@
 								<h3>Keepalive D</h3>
 								<!-- Bell Icon -->
 								<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
-                <div class="alerts-silence">
-										<h5><span>02</span> Alerts Silenced</h5>
-									</div>
 							</div>
-              <div class="ackngmnt-main">
-									<p><span>12/18</span> Alerts Acknowledged</p>
-								</div>
 						</div>
 					</div>
 					<!-- Column 3 section ends -->

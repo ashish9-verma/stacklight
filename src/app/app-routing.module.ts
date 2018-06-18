@@ -6,8 +6,8 @@ import { HistoryComponent } from './history/history.component';
 import { LoginComponent } from './login/login.component';
 const routes: Routes = [
 {
-	path : '',
-	component : DashboardComponent
+	path : 'alerts',
+	component : LoginComponent
 },
 {
 	path : 'dashboard',

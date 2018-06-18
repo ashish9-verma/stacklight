@@ -16,8 +16,15 @@ export class LoginComponent implements OnInit {
   password : string ='';
   isError :boolean = false;
   errorMessage :  string ='';
+  userData : any;
   constructor(private router : Router,private dataService: DataService) {}
   ngOnInit() {
+    this.userData = localStorage.getItem('user');
+    this.userData = JSON.parse(this.userData);
+    console.log('userData',this.userData != null)
+    if(this.userData != null){
+        this.router.navigate(['dashboard']);
+    }
 
   }
 
@@ -30,7 +37,8 @@ export class LoginComponent implements OnInit {
       this.dataService.doPOST(url,params,headers).subscribe(
           suc => {
               console.log('success',suc);
-              this.router.navigate(['dashboard'])
+              localStorage.setItem('user',JSON.stringify(suc));
+              this.router.navigate(['dashboard']);
           },
           err => {
               let response = JSON.parse(err._body)
@@ -50,4 +58,7 @@ export class LoginComponent implements OnInit {
       this.isError = true;
     }
   }
+
+
+
 }

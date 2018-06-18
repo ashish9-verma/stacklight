@@ -21,13 +21,25 @@ export class DashboardComponent implements OnInit {
 	public obj_top_row =[];
   public obj_middle_row =[];
   public obj_bottom_row =[];
-
+  public userData : any ;
+  public userId : any;
   constructor(private router : Router,private dataService: DataService) {
 
   }
 
   ngOnInit() {
-    var url ='http://10.157.251.27:3000/sle/dashboard?userId=admin&cloudName=jse4';
+    this.userData = localStorage.getItem('user');
+    this.userData = JSON.parse(this.userData);
+    console.log("userData in dashboad",this.userData);
+    
+    if(this.userData == null){
+      this.router.navigate(['login'])
+    }else{
+      this.userId = this.userData.userId;
+    }
+        
+
+    var url ='http://10.157.251.27:3000/sle/dashboard?userId='+this.userId+'&cloudName=jse4';
 
     this.dataService.doGET(url).subscribe(
         suc => {
@@ -59,7 +71,7 @@ export class DashboardComponent implements OnInit {
 
   }
   open(){
-    console.log("hi")
+    console.log("hi");
   }
 
   inArray(needle, haystack) {
@@ -68,6 +80,11 @@ export class DashboardComponent implements OnInit {
           if(haystack[i] == needle) return true;
       }
       return false;
+  }
+
+  logout(){
+    console.log("logout");
+    this.dataService.logout();
   }
 }
 
