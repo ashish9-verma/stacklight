@@ -17,7 +17,8 @@ export class LoginComponent implements OnInit {
   isError :boolean = false;
   errorMessage :  string ='';
   userData : any;
-  constructor(private router : Router,private dataService: DataService) {}
+  dataService: DataService
+  constructor(private router : Router) {}
   ngOnInit() {
     this.userData = localStorage.getItem('user');
     this.userData = JSON.parse(this.userData);

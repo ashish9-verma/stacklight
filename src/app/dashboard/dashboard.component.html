@@ -10,6 +10,12 @@
 	<title>JAWS Monitoring - Dashboard</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+	<!-- Icon Files -->
+	<!-- Scripts -->
+	<script src="scripts/jquery-3.3.1.slim.min.js"></script>
+	<script src="scripts/popper.min.js"></script>
+	<script src="scripts/bootstrap.min.js"></script>
+	<script type="text/javascript" src="scripts/scripts.js"></script>
 </head>
 
 <body>
@@ -19,7 +25,7 @@
 				<ul>
 					<li class="dashboard active"><span class="NeueBoardsFocused"></span>Dashboard</li>
 					<!--<li class="alerts"><span class="NeueNotificationFocused"></span>Alerts</li>-->
-					<li class="history"><span class="NeueHistory"></span>History</li>
+					<li class="history" routerLink="/history"><span class="NeueHistory"></span>History</li>
 				</ul>
 			</nav>
 		</header>
@@ -35,19 +41,18 @@
 			<div class="dashboard-main">
 				<!-- Top Row Starts -->
 				<div class="top-row">
-					
-					<div class="component rounded pad-all-10">
+					<div class="component rounded pad-all-10" [ngClass]="{'critical': monitoringComponents[1].alertType=='R','warning': monitoringComponents[1].alertType=='Y'}">
 						<div class="info-main">
 							<h3>Heat</h3>
 							<!-- Bell Icon -->
-							<a href="javascript:void(0)" class="NeueNotificationFocused"></a>
+							<a [ngClass]="{'NeueNotificationFocused': monitoringComponents[1].componentSilence=='N','NeueNoNotification': monitoringComponents[1].componentSilence=='Y'}"></a>
 							<div class="alerts-silence">
-                           <h5>02 Alerts Silenced</h5>
+                           <h5 *ngIf="monitoringComponents[1].silenceAlerts > '0'">{{monitoringComponents[1].silenceAlerts}} Alerts Silenced</h5>
                            </div>
 						</div>
-						<div class="ackngmnt-main">
-                        <p>12/18 Alerts Acknowledged</p>
-                        </div>
+						<div class="ackngmnt-main" *ngIf="monitoringComponents[1].totalAlerts > '0'">
+							<p><span>{{monitoringComponents[1].ackAlerts}}/{{monitoringComponents[1].totalAlerts}}</span> Alerts Acknowledged</p>
+						</div>
 					</div>
 					<div class="hori-lines-bg"></div>
 				</div>
@@ -60,63 +65,75 @@
 						<h4>OpenStack Components</h4>
 
 						<div class="openstack-row">
-							<div class="component rounded">
+							<div class="component rounded" [ngClass]="{'critical': monitoringComponents[2].alertType=='R','warning': monitoringComponents[2].alertType=='Y'}">
 								<div class="info-main">
 									<h3>Nova</h3>
 									<!-- Bell Icon -->
-									<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
+									<a [ngClass]="{'NeueNotificationFocused': monitoringComponents[2].componentSilence=='N','NeueNoNotification': monitoringComponents[2].componentSilence=='Y'}" title="Silence this alert"></a>
 									<div class="alerts-silence">
-                              <h5>02 Alerts Silenced</h5>
-                           </div> 
+                           <h5 *ngIf="monitoringComponents[2].silenceAlerts > '0'">{{monitoringComponents[2].silenceAlerts}} Alerts Silenced</h5>
+                           </div>
 								</div>
-								<div class="ackngmnt-main">
-                           <p>12/18 Alerts Acknowledged</p>
-                        </div>
+								<div class="ackngmnt-main" *ngIf="monitoringComponents[2].totalAlerts > '0'">
+							<p><span>{{monitoringComponents[2].ackAlerts}}/{{monitoringComponents[2].totalAlerts}}</span> Alerts Acknowledged</p>
+						</div>
 							</div>
 
-							<div class="component rounded critical">
+							<div class="component rounded" [ngClass]="{'critical': monitoringComponents[3].alertType=='R','warning': monitoringComponents[3].alertType=='Y'}">
 								<div class="info-main">
 									<h3>Neutron</h3>
 									<!-- Bell Icon -->
-									<a href="javascript:void(0)" class="NeueNoNotification" title="Enable this alert"></a>
+									<a [ngClass]="{'NeueNotificationFocused': monitoringComponents[3].componentSilence=='N','NeueNoNotification': monitoringComponents[3].componentSilence=='Y'}" title="Enable this alert"></a>
 									<div class="alerts-silence">
-										<h5><span>02</span> Alerts Silenced</h5>
-									</div>
+                           <h5 *ngIf="monitoringComponents[3].silenceAlerts > '0'">{{monitoringComponents[3].silenceAlerts}} Alerts Silenced</h5>
+                           </div>
 								</div>
-								<div class="ackngmnt-main">
-									<p><span>12/18</span> Alerts Acknowledged</p>
-								</div>
+								<div class="ackngmnt-main" *ngIf="monitoringComponents[3].totalAlerts > '0'">
+							<p><span>{{monitoringComponents[3].ackAlerts}}/{{monitoringComponents[3].totalAlerts}}</span> Alerts Acknowledged</p>
+						</div>
 							</div>
 
-							<div class="component rounded warning">
+							<div class="component rounded" [ngClass]="{'critical': monitoringComponents[4].alertType=='R','warning': monitoringComponents[4].alertType=='Y'}">
 								<div class="info-main">
 									<h3>Cinder</h3>
 									<!-- Bell Icon -->
-									<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
+									<a [ngClass]="{'NeueNotificationFocused': monitoringComponents[4].componentSilence=='N','NeueNoNotification': monitoringComponents[4].componentSilence=='Y'}" title="Silence this alert"></a>
 									<div class="alerts-silence">
-										<h5><span>02</span> Alerts Silenced</h5>
-									</div>
+                           <h5 *ngIf="monitoringComponents[4].silenceAlerts > '0'">{{monitoringComponents[4].silenceAlerts}} Alerts Silenced</h5>
+                           </div>
 								</div>
-								<div class="ackngmnt-main">
-									<p><span>12/18</span> Alerts Acknowledged</p>
-								</div>
+								<div class="ackngmnt-main" *ngIf="monitoringComponents[4].totalAlerts > '0'">
+							<p><span>{{monitoringComponents[4].ackAlerts}}/{{monitoringComponents[4].totalAlerts}}</span> Alerts Acknowledged</p>
+						</div>
 							</div>
 						</div>
 						<!-- Openstanck Second Row starts -->
 						<div class="openstack-row">
-							<div class="component rounded float-left">
+							<div class="component rounded float-left" [ngClass]="{'critical': monitoringComponents[7].alertType=='R','warning': monitoringComponents[7].alertType=='Y'}">
 								<div class="info-main">
 									<h3>Keystone</h3>
 									<!-- Bell Icon -->
-									<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
+									<a [ngClass]="{'NeueNotificationFocused': monitoringComponents[7].componentSilence=='N','NeueNoNotification': monitoringComponents[7].componentSilence=='Y'}" title="Silence this alert"></a>
+									<div class="alerts-silence">
+                           <h5 *ngIf="monitoringComponents[7].silenceAlerts > '0'">{{monitoringComponents[7].silenceAlerts}} Alerts Silenced</h5>
+                           </div>
 								</div>
+								<div class="ackngmnt-main" *ngIf="monitoringComponents[7].totalAlerts > '0'">
+							<p><span>{{monitoringComponents[7].ackAlerts}}/{{monitoringComponents[7].totalAlerts}}</span> Alerts Acknowledged</p>
+						</div>
 							</div>
-							<div class="component rounded float-left">
+							<div class="component rounded float-left" [ngClass]="{'critical': monitoringComponents[8].alertType=='R','warning': monitoringComponents[8].alertType=='Y'}">
 								<div class="info-main">
 									<h3>Glance</h3>
 									<!-- Bell Icon -->
-									<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
+									<a [ngClass]="{'NeueNotificationFocused': monitoringComponents[8].componentSilence=='N','NeueNoNotification': monitoringComponents[8].componentSilence=='Y'}" title="Silence this alert"></a>
+									<div class="alerts-silence">
+                           <h5 *ngIf="monitoringComponents[8].silenceAlerts > '0'">{{monitoringComponents[8].silenceAlerts}} Alerts Silenced</h5>
+                           </div>
 								</div>
+								<div class="ackngmnt-main" *ngIf="monitoringComponents[8].totalAlerts > '0'">
+							<p><span>{{monitoringComponents[8].ackAlerts}}/{{monitoringComponents[8].totalAlerts}}</span> Alerts Acknowledged</p>
+						</div>
 							</div>
 						</div>
 						<!-- Openstanck Second Row ends -->
@@ -126,20 +143,32 @@
 
 					<!-- Column Two - Horizon Ceph Section starts -->
 					<div class="col2-horizon-ceph">
-						<div class="component rounded float-left pad-all-10">
+						<div class="component rounded float-left pad-all-10" [ngClass]="{'critical': monitoringComponents[5].alertType=='R','warning': monitoringComponents[5].alertType=='Y'}">
 							<div class="info-main">
 								<h3>Horizon</h3>
 								<!-- Bell Icon -->
-								<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
+								<a [ngClass]="{'NeueNotificationFocused': monitoringComponents[5].componentSilence=='N','NeueNoNotification': monitoringComponents[5].componentSilence=='Y'}" title="Silence this alert"></a>
+								<div class="alerts-silence">
+                           <h5 *ngIf="monitoringComponents[5].silenceAlerts > '0'">{{monitoringComponents[5].silenceAlerts}} Alerts Silenced</h5>
+                           </div>
 							</div>
+							<div class="ackngmnt-main" *ngIf="monitoringComponents[5].totalAlerts > '0'">
+							<p><span>{{monitoringComponents[5].ackAlerts}}/{{monitoringComponents[5].totalAlerts}}</span> Alerts Acknowledged</p>
+						</div>
 						</div>
 
-						<div class="component rounded float-left pad-all-10">
+						<div class="component rounded float-left pad-all-10" [ngClass]="{'critical': monitoringComponents[6].alertType=='R','warning': monitoringComponents[6].alertType=='Y'}">
 							<div class="info-main">
 								<h3>Ceph</h3>
 								<!-- Bell Icon -->
-								<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
+								<a [ngClass]="{'NeueNotificationFocused': monitoringComponents[6].componentSilence=='N','NeueNoNotification': monitoringComponents[6].componentSilence=='Y'}" title="Silence this alert"></a>
+								<div class="alerts-silence">
+                           <h5 *ngIf="monitoringComponents[6].silenceAlerts > '0'">{{monitoringComponents[6].silenceAlerts}} Alerts Silenced</h5>
+                           </div>
 							</div>
+							<div class="ackngmnt-main" *ngIf="monitoringComponents[6].totalAlerts > '0'">
+							<p><span>{{monitoringComponents[6].ackAlerts}}/{{monitoringComponents[6].totalAlerts}}</span> Alerts Acknowledged</p>
+						</div>
 						</div>
 					</div>
 					<!-- Column Two - Horizon Ceph Section ends -->
@@ -153,38 +182,62 @@
 						<!-- System Left Section starts -->
 						<div class="system-left">
 							<h4>System</h4>
-							<div class="component rounded float-left pad-all-10">
+							<div class="component rounded float-left pad-all-10" [ngClass]="{'critical': monitoringComponents[9].alertType=='R','warning': monitoringComponents[9].alertType=='Y'}">
 								<div class="info-main">
 									<h3>System</h3>
 									<!-- Bell Icon -->
-									<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
+									<a [ngClass]="{'NeueNotificationFocused': monitoringComponents[9].componentSilence=='N','NeueNoNotification': monitoringComponents[9].componentSilence=='Y'}" title="Silence this alert"></a>
+									<div class="alerts-silence">
+                           <h5 *ngIf="monitoringComponents[9].silenceAlerts > '0'">{{monitoringComponents[9].silenceAlerts}} Alerts Silenced</h5>
+                           </div>
 								</div>
+								<div class="ackngmnt-main" *ngIf="monitoringComponents[9].totalAlerts > '0'">
+							<p><span>{{monitoringComponents[9].ackAlerts}}/{{monitoringComponents[9].totalAlerts}}</span> Alerts Acknowledged</p>
+						</div>
 							</div>
-							<div class="component rounded float-left pad-all-10">
+							<div class="component rounded float-left pad-all-10" [ngClass]="{'critical': monitoringComponents[10].alertType=='R','warning': monitoringComponents[10].alertType=='Y'}">
 								<div class="info-main">
 									<h3>My SQL</h3>
 									<!-- Bell Icon -->
-									<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
+									<a [ngClass]="{'NeueNotificationFocused': monitoringComponents[10].componentSilence=='N','NeueNoNotification': monitoringComponents[10].componentSilence=='Y'}" title="Silence this alert"></a>
+									<div class="alerts-silence">
+                           <h5 *ngIf="monitoringComponents[10].silenceAlerts > '0'">{{monitoringComponents[10].silenceAlerts}} Alerts Silenced</h5>
+                           </div>
 								</div>
+								<div class="ackngmnt-main" *ngIf="monitoringComponents[10].totalAlerts > '0'">
+							<p><span>{{monitoringComponents[10].ackAlerts}}/{{monitoringComponents[10].totalAlerts}}</span> Alerts Acknowledged</p>
+						</div>
 							</div>
-							<div class="component rounded float-left pad-all-10">
+							<div class="component rounded float-left pad-all-10" [ngClass]="{'critical': monitoringComponents[12].alertType=='R','warning': monitoringComponents[12].alertType=='Y'}">
 								<div class="info-main">
 									<h3>Rabbit MQ</h3>
 									<!-- Bell Icon -->
-									<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
+									<a [ngClass]="{'NeueNotificationFocused': monitoringComponents[12].componentSilence=='N','NeueNoNotification': monitoringComponents[12].componentSilence=='Y'}" title="Silence this alert"></a>
+									<div class="alerts-silence">
+                           <h5 *ngIf="monitoringComponents[12].silenceAlerts > '0'">{{monitoringComponents[1].silenceAlerts}} Alerts Silenced</h5>
+                           </div>
 								</div>
+								<div class="ackngmnt-main" *ngIf="monitoringComponents[12].totalAlerts > '0'">
+							<p><span>{{monitoringComponents[12].ackAlerts}}/{{monitoringComponents[12].totalAlerts}}</span> Alerts Acknowledged</p>
+						</div>
 							</div>
 						</div>
 						<!-- System left section ends -->
 
 						<!-- Column 2 section starts -->
 						<div class="col2">
-							<div class="component rounded float-left pad-all-10">
+							<div class="component rounded float-left pad-all-10" [ngClass]="{'critical': monitoringComponents[11].alertType=='R','warning': monitoringComponents[11].alertType=='Y'}">
 								<div class="info-main">
 									<h3>Contrail</h3>
 									<!-- Bell Icon -->
-									<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
+									<a [ngClass]="{'NeueNotificationFocused': monitoringComponents[11].componentSilence=='N','NeueNoNotification': monitoringComponents[11].componentSilence=='Y'}" title="Silence this alert"></a>
+									<div class="alerts-silence">
+                           <h5 *ngIf="monitoringComponents[11].silenceAlerts > '0'">{{monitoringComponents[11].silenceAlerts}} Alerts Silenced</h5>
+                           </div>
 								</div>
+								<div class="ackngmnt-main" *ngIf="monitoringComponents[11].totalAlerts > '0'">
+							<p><span>{{monitoringComponents[11].ackAlerts}}/{{monitoringComponents[11].totalAlerts}}</span> Alerts Acknowledged</p>
+						</div>
 							</div>
 						</div>
 						<!-- Column 2 section ends -->
@@ -193,20 +246,32 @@
 					<!-- System section ends -->
 					<!-- Column 3 section ends -->
 					<div class="col3">
-						<div class="component rounded float-left pad-all-10">
+						<div class="component rounded float-left pad-all-10" [ngClass]="{'critical': monitoringComponents[13].alertType=='R','warning': monitoringComponents[13].alertType=='Y'}">
 							<div class="info-main">
 								<h3>Ha Proxy</h3>
 								<!-- Bell Icon -->
-								<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
+								<a [ngClass]="{'NeueNotificationFocused': monitoringComponents[13].componentSilence=='N','NeueNoNotification': monitoringComponents[13].componentSilence=='Y'}" title="Silence this alert"></a>
+								<div class="alerts-silence">
+                           <h5 *ngIf="monitoringComponents[13].silenceAlerts > '0'">{{monitoringComponents[13].silenceAlerts}} Alerts Silenced</h5>
+                           </div>
 							</div>
+							<div class="ackngmnt-main" *ngIf="monitoringComponents[13].totalAlerts > '0'">
+							<p><span>{{monitoringComponents[13].ackAlerts}}/{{monitoringComponents[13].totalAlerts}}</span> Alerts Acknowledged</p>
+						</div>
 						</div>
 
-						<div class="component rounded float-left pad-all-10">
+						<div class="component rounded float-left pad-all-10" [ngClass]="{'critical': monitoringComponents[14].alertType=='R','warning': monitoringComponents[14].alertType=='Y'}">
 							<div class="info-main">
 								<h3>Keepalive D</h3>
 								<!-- Bell Icon -->
-								<a href="javascript:void(0)" class="NeueNotificationFocused" title="Silence this alert"></a>
+								<a [ngClass]="{'NeueNotificationFocused': monitoringComponents[14].componentSilence=='N','NeueNoNotification': monitoringComponents[14].componentSilence=='Y'}" title="Silence this alert"></a>
+								<div class="alerts-silence">
+                           <h5 *ngIf="monitoringComponents[14].silenceAlerts > '0'">{{monitoringComponents[14].silenceAlerts}} Alerts Silenced</h5>
+                           </div>
 							</div>
+							<div class="ackngmnt-main" *ngIf="monitoringComponents[14].totalAlerts > '0'">
+							<p><span>{{monitoringComponents[14].ackAlerts}}/{{monitoringComponents[14].totalAlerts}}</span> Alerts Acknowledged</p>
+						</div>
 						</div>
 					</div>
 					<!-- Column 3 section ends -->
