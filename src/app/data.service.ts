@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import {Http, Response, RequestOptions, Headers,URLSearchParams,RequestMethod} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
+import {HttpModule} from '@angular/http';
 import { HttpHeaders } from '@angular/common/http';
-
-
+import {Router} from "@angular/router";
 import { Observable, Subject, ReplaySubject, from, of, range } from 'rxjs';
 import { map, filter, switchMap } from 'rxjs/operators';
 
@@ -11,7 +12,7 @@ import { map, filter, switchMap } from 'rxjs/operators';
 })
 export class DataService {
 
-  constructor(private http: Http) { }
+  constructor(private http: Http,private router : Router) { }
 
   doGET(url){
 
@@ -27,6 +28,11 @@ export class DataService {
     return this.http.post(url,params,{headers: headers }).pipe(
         map(res => res.json()) // or any other operator
       );
+  }
+
+  logout(){
+    localStorage.removeItem('user');
+    this.router.navigate(['login']);
   }
 
 }

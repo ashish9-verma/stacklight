@@ -29,14 +29,14 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-6 center-block">
 					<div class="login-main">
-						<img src="../../images/jaws-logo.png" alt="JAWS Logo" class="img" />
+						<div class="jaws-logo"></div>
 						<div class="container">
 							<h1>JAWS</h1>
 							<h2>Monitoring</h2>
 							<div class="row">
 								<div class="col-sm-12 col-md-12 col-lg-12">
 									<div class="login-form">
-										<form action="" method="post">
+                    <form action="" method="post">
 											<span class="login-error" *ngIf ="isError" >{{errorMessage}}</span>
 											<input type="text" placeholder="User Name" name="emailid"  [(ngModel)]="email"/>
 											<input type="password" placeholder="Password" name="password"  [(ngModel)]="password" />
